@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif; }
+
+.container {
+  text-align: center; }
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  width: 350px;
+  margin-bottom: 30px; }
+  .progress:before {
+    content: '';
+    height: 4px;
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 99%;
+    z-index: -1; }
+  .progress-bar {
+    height: 4px;
+    background-color: #0398fc;
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    width: 0%;
+    z-index: -1;
+    transition: .4s ease; }
+  .progress .numbers {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: #bdbdbd 2px solid;
+    color: #bdbdbd;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .6s ease; }
+  .progress .active {
+    border-color: #0398fc;
+    transition: border-color 1s ease; }
+
+.buttons {
+  padding-top: 15px; }
+  .buttons #prev, .buttons #next {
+    width: 90px;
+    height: 35px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    border-radius: 5px; }
+  .buttons #prev:disabled:hover, .buttons #next:disabled:hover {
+    pointer-events: auto;
+    cursor: not-allowed; }
+  .buttons #prev {
+    background-color: #bebebe; }
+  .buttons #next {
+    background-color: #0398fc; }
